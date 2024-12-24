@@ -79,13 +79,10 @@ I have taken my first BSCP exam on **December 24th, 2024**. I failed on App 2 wi
        - Exploit using `X-headers`: **NOT VULNERABLE** (Not Reflected to the Exploit Server)
        - Exploit by supplying an absolute URL in the request line as follows `GET https://WEB_ID.WEB_ID.web-security-academy.net/`: **NOT VULNERABLE**. Please refer to [this lab](https://portswigger.net/web-security/host-header/exploiting/lab-host-header-ssrf-via-flawed-request-parsing)
        - Exploit using duplicated host > **NOT VULNERABLE**
-         > [!NOTE]
          > Not Reflected to the Exploit Server
        - Exploit using connection state > **NOT VULNERABLE**
-         > [!NOTE]
          > it seems it was not able to use the connection header. Since `Connection` was not reflected in the response.
     2) Brute forcing user > **NOT VULNERABLE**.
-         > [!NOTE]
          > There is no response with statusCode `302`)
     3) <a name="walkthrough-number-3"></a>I have found a different `Response Message` in the **Forgot Password** feature that indicates whether the user exists.
     4) I have performed CSRF Attack:
@@ -97,7 +94,6 @@ I have taken my first BSCP exam on **December 24th, 2024**. I failed on App 2 wi
        - unable to use `CL` and `TE` Headers in a request: **NOT VULNERABLE** (Indicates we can direct to use **H2 or HTTP2** Techiniques)
        - Performed H2.TE; H2.CL; H2 Smuggling CRLF; CL.0 Req: **NOT VULNERABLE** (always GET `200` response, But It seems I have not exploited these techniques correctly).
     7) I have scanned using the `Launch All Scans` option in the **HTTP Request Smuggler** Extension. In addition, I only got a `dual path` vulnerability. In my opinion, we cannot consider that scan result as a potential vulnerability.
-       > [!NOTE]
        > I will describe the reason in the next point).
 
   - Potential Vulnerability:
@@ -106,11 +102,11 @@ I have taken my first BSCP exam on **December 24th, 2024**. I failed on App 2 wi
        <p> I have tried to find the potential labs in **Port Swigger Academy** that have similarities with my case in the exam. And I have found the closest potential in [this lab](https://portswigger.net/web-security/request-smuggling/advanced/lab-request-smuggling-h2-request-splitting-via-crlf-injection) with `H2 Request Splitting via CRLF Injection` technique. The reason is When solving that lab, I only got the `dual path` vulnerability in the scan result compared to other `HTTP/2 Request Smuggling` techniques</p>
     2) HTTP/2-TE. Please refers to [this lab](https://portswigger.net/web-security/request-smuggling/advanced/response-queue-poisoning/lab-request-smuggling-h2-response-queue-poisoning-via-te-request-smuggling).
     3) Maybe Obfuscating `TE` Header using payload in **BotesJuan**'s Repo would be a good option.
-       > [!NOTE]
        > Please note not to duplicate this header. Just use 1 `TE` Header since duplicated `TE` Header is not allowed).
-    5) Perform H2.CL Technique refers to [this lab](https://portswigger.net/web-security/request-smuggling/advanced/lab-request-smuggling-h2-cl-request-smuggling).
-    6) Perform CL.0 Technique refers to [this lab](https://portswigger.net/web-security/request-smuggling/browser/cl-0/lab-cl-0-request-smuggling).
-    7) Brute Force the **Password** using the potential `usernames` based on the `Walkthrough` [number 3](#walkthrough-number-3).
+    
+    4) Perform H2.CL Technique refers to [this lab](https://portswigger.net/web-security/request-smuggling/advanced/lab-request-smuggling-h2-cl-request-smuggling).
+    5) Perform CL.0 Technique refers to [this lab](https://portswigger.net/web-security/request-smuggling/browser/cl-0/lab-cl-0-request-smuggling).
+    6) Brute Force the **Password** using the potential `usernames` based on the `Walkthrough` [number 3](#walkthrough-number-3).
 
     
 
