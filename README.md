@@ -5,7 +5,7 @@ This Repo contains Burp Suite Certification Practitioner Recapitulation of Mine
 ## BSCP 1<sup>st</sup> Exam
 I have taken my first BSCP exam on **December 24th, 2024**. I failed on App 2 without success to address any vulnerabilities. Please find the details in the following points:
 
-### Application 1 - EXPLOITED !!!
+### Application 1 - EXPLOITED ❤️‍🔥
 - Stage 1:
   - Features:
     The features mentioned here are the visible functional that we can exploit for stage 1
