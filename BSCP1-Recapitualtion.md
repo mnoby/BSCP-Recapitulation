@@ -1,4 +1,4 @@
-# BSCP-Recapitulation
+# BSCP1-Recapitulation
 This Repo contains Burp Suite Certification Practitioner Recapitulation of Mine
 
 
